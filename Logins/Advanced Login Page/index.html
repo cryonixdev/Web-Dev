@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #login-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        #login-container input[type="text"],
+        #login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        #login-container button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #login-container a {
+            display: block;
+            margin: 10px 0;
+            color: #007BFF;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        #login-container .icon-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        #login-container .icon-container img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="login-container">
+        <input type="text" id="loginID" placeholder="Email, Phone or Username">
+        <input type="password" id="password" placeholder="Password">
+        <button id="loginButton">Login</button>
+        <a href="#" id="createAccountLink">Create Account</a>
+        <div class="icon-container">
+            <img src="assets/google.png" alt="Icon 1" id="icon1">
+            <img src="assets/microsoft.png" alt="Icon 2" id="icon2">
+            <img src="assets/instagram.png" alt="Icon 3" id="icon3">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('icon1').addEventListener('click', function() {
+            window.location.href = 'https://www.google.com';
+        });
+        document.getElementById('icon2').addEventListener('click', function() {
+            window.location.href = 'https://www.microsoft.com';
+        });
+        document.getElementById('icon3').addEventListener('click', function() {
+            window.location.href = 'https://www.instagram.com';
+        });
+    </script>
+</body>
+</html>

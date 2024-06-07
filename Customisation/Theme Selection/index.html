@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Dev</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffffff;
+        }
+        #control-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .theme-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .white-theme { background-color: #ffffff; color: #000000; }
+        .light-grey-theme { background-color: #d3d3d3; color: #000000; }
+        .dark-grey-theme { background-color: #a9a9a9; color: #000000; }
+        .black-theme { background-color: #000000; color: #ffffff; }
+    </style>
+</head>
+<body>
+    <div id="control-panel">
+        <button class="theme-button white-theme" data-color="#ffffff">White Theme</button>
+        <button class="theme-button light-grey-theme" data-color="#d3d3d3">Light Grey Theme</button>
+        <button class="theme-button dark-grey-theme" data-color="#191919">Dark Grey Theme</button>
+        <button class="theme-button black-theme" data-color="#000000">Black Theme</button>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.theme-button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const color = button.getAttribute('data-color');
+                document.body.style.backgroundColor = color;
+
+                buttons.forEach(btn => {
+                    if (color === '#000000') {
+                        btn.style.backgroundColor = '#000000';
+                        btn.style.color = '#ffffff';
+                    } else {
+                        btn.style.backgroundColor = color;
+                        btn.style.color = '#000000';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
